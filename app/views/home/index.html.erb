@@ -1,4 +1,13 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+<%= render partial: "partials/header" %>
+
+<div class="mt-12">
+  <h1 class="font-bold text-3xl">Blog posts</h1>
+
+  <div class="mt-4">
+    <% @blogs.each do |blog| %>
+      <h1 class="text-red-400"><%= blog.created_at.to_date %></h1>
+      <%= blog.title %>
+      <%= blog.content %>
+    <% end %>
+  </div>
 </div>
