@@ -9,6 +9,8 @@ on:
   push:
     branches: 
     - '**'
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -34,5 +36,12 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run StandardRB
         run: bundle exec standardrb --format progress
-      # - name: Run Rspec
-      #   run: bundle exec rspec
+  deploy:
+      name: Deploy app
+      runs-on: ubuntu-latest
+      environment: production
+      needs: [lint]
+      steps:
+        - uses: actions/checkout@v3
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: flyctl deploy --remote-only
