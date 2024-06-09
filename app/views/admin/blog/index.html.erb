@@ -1,0 +1,13 @@
+<div class="mt-12">
+  <h1 class="font-bold text-3xl">Admin Dashboard</h1>
+
+  <div class="mt-4">
+    <%= link_to "New Blog", new_admin_blog_path %>
+
+    <% @blogs.each do |blog| %>
+      <h1 class="text-red-400"><%= blog.created_at.to_date %></h1>
+      <%= blog.title %>
+      <%= blog.content %>
+    <% end %>
+  </div>
+</div>
