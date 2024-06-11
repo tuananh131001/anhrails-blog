@@ -2,24 +2,16 @@
 
 module Admin
   class BlogsController < ApplicationController
-    def new
-      @blog = Blog.new
+    def index
+      @blogs = Blog.limit(10)
     end
 
     def show
       @blog = Blog.find(params[:id])
     end
 
-    def index
-      @blogs = Blog.all.limit(10)
-    end
-
-    def update
-      if @blog.update(blog_params)
-        redirect_to blogs_path, notice: 'Blog was successfully updated.'
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    def new
+      @blog = Blog.new
     end
 
     def create
@@ -29,6 +21,14 @@ module Admin
       else
         flash.now[:error] = 'Could not save blog'
         render :new, status: :unprocessable_entity
+      end
+    end
+
+    def update
+      if @blog.update(blog_params)
+        redirect_to blogs_path, notice: 'Blog was successfully updated.'
+      else
+        render :edit, status: :unprocessable_entity
       end
     end
 

@@ -1,0 +1,51 @@
+AllCops:
+  NewCops: disable
+  TargetRubyVersion: 3.3.1
+  Exclude:
+    - node_modules/**/*
+    - vendor/**/*
+    - bin/*
+    - db/schema.rb
+
+Metrics/AbcSize:
+  Max: 70
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+  Max: 100
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Layout/LineLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Max: 8
+
+require:
+ - rubocop-factory_bot
+ - rubocop-rails
+ - rubocop-rspec
