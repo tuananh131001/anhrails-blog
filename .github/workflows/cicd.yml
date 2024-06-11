@@ -67,7 +67,6 @@ jobs:
           POSTGRES_DB: anhrails-blog-test
           POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
         run: |
-          cp config/database.yml.ci config/database.yml
           bundle exec rails db:create
           bundle exec rails db:schema:load
       - name: Run Rspec
@@ -76,7 +75,7 @@ jobs:
       name: Deploy app
       runs-on: ubuntu-latest
       environment: production
-      needs: [lint]
+      needs: [lint, test]
       steps:
         - uses: actions/checkout@v3
         - uses: superfly/flyctl-actions/setup-flyctl@master
