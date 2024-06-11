@@ -45,6 +45,9 @@ Style/AsciiComments:
 Metrics/ParameterLists:
   Max: 8
 
+RSpec/NamedSubject:
+  Enabled: false
+
 require:
  - rubocop-factory_bot
  - rubocop-rails
