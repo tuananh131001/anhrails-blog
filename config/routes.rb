@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   namespace :admin do
-    resources :blog, only: %i[index new]
+    resources :blogs
   end
 end

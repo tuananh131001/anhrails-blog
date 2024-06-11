@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "daisyui": "^4.12.2"
+  },
+  "dependencies": {
+    "@hotwired/turbo-rails": "^8.0.4"
   }
 }
