@@ -73,6 +73,7 @@ jobs:
           RAILS_ENV: "test"
           DATABASE_URL: "postgres://postgres@localhost:5432/anhrails-blog-test"
         run: |
+          bundle exec rake assets:precompile
           bundle exec rails db:setup
           bundle exec rspec --format progress
   deploy:
