@@ -3,6 +3,10 @@
     "daisyui": "^4.12.2"
   },
   "dependencies": {
-    "@hotwired/turbo-rails": "^8.0.4"
+    "@editorjs/code": "^2.9.0",
+    "@editorjs/editorjs": "^2.29.1",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/list": "^1.9.0",
+    "@editorjs/paragraph": "^2.11.5"
   }
 }

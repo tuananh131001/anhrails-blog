@@ -1,14 +1,13 @@
 <%= link_to 'Back', admin_blogs_path, class: 'btn btn-secondary btn-sm max-w-12' %>
-<%= form_for [:admin, @blog] do |form|%>
+<%= form_for([:admin, @blog], data: { controller: 'editor'} ) do |form|%>
   <p>
     <b>Blog Title</b><br>
     <%= form.text_field :title, class: "input input-bordered w-full max-w-xs mt-2" %>
   </p>
-  <p>
+  <div>
     <b>Blog Content</b><br>
-    <%= form.text_area :content,class: "textarea textarea-bordered mt-2" %>
-  </p>
-    <p>
+    <div id="blog_content" data-editor-target="blog_content" class="bg-white">
+  </div>
   <b>Blog tags</b><br>
     <%= form.text_field :tag, class: "input input-bordered w-full max-w-xs mt-2" %>
   </p>
@@ -17,4 +16,3 @@
   </p>
 <% end %>
 </div>
-
