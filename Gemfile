@@ -8,7 +8,7 @@ ruby '3.3.1'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'propshaft'
+gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -23,7 +23,7 @@ gem 'importmap-rails'
 gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
+gem "stimulus-rails"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails'
