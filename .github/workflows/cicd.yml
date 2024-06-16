@@ -86,6 +86,6 @@ jobs:
       environment: production
       needs: [lint, test]
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@master
         - uses: superfly/flyctl-actions/setup-flyctl@master
         - run: flyctl deploy --remote-only
