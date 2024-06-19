@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme=<%= @theme %> >
+<html>
   <head>
     <title>AnhrailsBlog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +12,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-8 px-5 flex flex-col">
+  <body data-theme=<%= cookies[:theme] %> class="h-screen">
+    <main class="container mx-auto px-5 flex flex-col" >
       <div class="text-color-green font-bold text-center"><%= notice if notice %></div>
       <div class="text-color-red font-bold text-center pb-5"><%= alert if alert %></div>
       <%= yield %>
