@@ -85,6 +85,7 @@ jobs:
       runs-on: ubuntu-latest
       environment: production
       needs: [lint, test]
+      if: github.ref == 'refs/heads/main' 
       steps:
         - uses: actions/checkout@master
         - uses: superfly/flyctl-actions/setup-flyctl@master
