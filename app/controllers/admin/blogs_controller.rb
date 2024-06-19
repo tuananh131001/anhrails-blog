@@ -6,7 +6,7 @@ module Admin
     before_action :set_light_theme, only: %i[new create edit]
 
     def index
-      @blogs = Blog.all.limit(10) # Use `all` for efficiency if no filtering needed
+      @blogs = Blog.all.limit(10)
     end
 
     def show; end
