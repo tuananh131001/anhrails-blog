@@ -12,6 +12,7 @@
           <h2 class="card-title"><%= blog.title %></h2>
           <%# <p>If a dog chews shoes whose shoes does he choose?</p> %>
           <div class="card-actions justify-end">
+          <%= link_to "Edit", edit_admin_blog_path(blog), class: "btn btn-secondary" %>
           <%= link_to "Destroy", admin_blog_path(blog), data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"

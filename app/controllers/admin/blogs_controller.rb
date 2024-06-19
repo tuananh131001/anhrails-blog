@@ -2,7 +2,7 @@
 
 module Admin
   class BlogsController < ApplicationController
-    before_action :set_light_theme, only: [:new]
+    before_action :set_light_theme, only: [:new, :edit]
 
     def index
       @blogs = Blog.limit(10)
@@ -32,6 +32,10 @@ module Admin
       else
         render :edit, status: :unprocessable_entity
       end
+    end
+
+    def edit
+      @blog = Blog.find(params[:id])
     end
 
     def destroy
