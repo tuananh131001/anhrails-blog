@@ -2,7 +2,7 @@
 
 module Admin
   class BlogsController < ApplicationController
-    before_action :set_light_theme, only: [:new, :edit]
+    before_action :set_light_theme, only: %i[new create edit]
 
     def index
       @blogs = Blog.limit(10)
@@ -21,7 +21,7 @@ module Admin
       if @blog.save
         redirect_to [:admin, @blog], notice: 'Blog was successfully created.'
       else
-        flash.now[:error] = 'Could not save blog'
+        flash.now[:alert] = 'Could not save blog'
         render :new, status: :unprocessable_entity
       end
     end
