@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Blog < ApplicationRecord
-  validates :title, :content, :tag, presence: true
+  has_rich_text :content
+  validates :title, :tag, presence: true
 end

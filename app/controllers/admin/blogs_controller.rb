@@ -2,6 +2,7 @@
 
 module Admin
   class BlogsController < ApplicationController
+    before_action :set_theme, only: [:new]
     def index
       @blogs = Blog.limit(10)
     end
@@ -42,6 +43,10 @@ module Admin
 
     def blog_params
       params.require(:blog).permit(:title, :content, :tag)
+    end
+
+    def set_theme
+      @theme = 'light'
     end
   end
 end
