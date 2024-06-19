@@ -75,4 +75,4 @@ gem 'newrelic_rpm'
 
 gem 'image_processing', '~> 1.12'
 
-gem "aws-sdk-s3", "~> 1.152"
+gem 'aws-sdk-s3', '~> 1.152'
