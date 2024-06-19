@@ -74,3 +74,5 @@ gem 'dockerfile-rails', '>= 1.6', group: :development
 gem 'newrelic_rpm'
 
 gem 'image_processing', '~> 1.12'
+
+gem "aws-sdk-s3", "~> 1.152"
