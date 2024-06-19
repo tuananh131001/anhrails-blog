@@ -5,9 +5,20 @@
 
   <div class="mt-4">
     <% @blogs.each do |blog| %>
-      <h1 class="text-red-400"><%= blog.created_at.to_date %></h1>
-      <%= blog.title %>
-      <%= blog.content %>
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <%# <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> %>
+        <div class="card-body">
+          <h1 class="text-red-400"><%= blog.created_at.to_date %></h1>
+          <h2 class="card-title"><%= blog.title %></h2>
+          <%# <p>If a dog chews shoes whose shoes does he choose?</p> %>
+          <div class="card-actions justify-end">
+          <%= link_to "Destroy", admin_blog_path(blog), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          }, class: "btn btn-warning" %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
