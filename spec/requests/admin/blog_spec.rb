@@ -15,4 +15,27 @@ RSpec.describe 'Admin::Blogs', type: :request do
       end
     end
   end
+
+  describe 'GET /blogs' do
+    subject { get '/admin/blogs', params: {} }
+
+    context 'when get all blogs' do
+      it 'returns blogs' do
+        subject
+        expect(response).to have_http_status(:ok)
+      end
+    end
+  end
+
+  describe 'Delete /blog' do
+    subject { delete "/admin/blogs/#{blog.id}", params: {} }
+
+    let!(:blog) { create(:blog) }
+
+    context 'when get all blogs' do
+      it 'deletes blogs' do
+        expect { subject }.to change(Blog, :count).from(1).to(0)
+      end
+    end
+  end
 end
