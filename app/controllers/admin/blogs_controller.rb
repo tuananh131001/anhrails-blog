@@ -41,6 +41,7 @@ module Admin
     end
 
     private
+
     def blog_params
       params.require(:blog).permit(:title, :content, :tag)
     end

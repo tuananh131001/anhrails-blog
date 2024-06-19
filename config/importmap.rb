@@ -12,5 +12,5 @@ pin '@editorjs/code', to: '@editorjs--code.js' # @2.9.0
 pin '@editorjs/header', to: '@editorjs--header.js' # @2.8.1
 pin '@editorjs/list', to: '@editorjs--list.js' # @1.9.0
 pin '@editorjs/paragraph', to: '@editorjs--paragraph.js' # @2.11.4
-pin "trix"
-pin "@rails/actiontext", to: "actiontext.esm.js"
+pin 'trix'
+pin '@rails/actiontext', to: 'actiontext.esm.js'
